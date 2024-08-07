@@ -12,6 +12,9 @@ function createGrid(size){
             cell.classList.add("cell");
             cell.addEventListener("mouseover", function(){
                 cell.style.backgroundColor = "black";
+                if(+cell.style.opacity <= 0.9){
+                    cell.style.opacity = +cell.style.opacity + 0.1;
+                }
             })
             row.appendChild(cell);
             console.log("c");
