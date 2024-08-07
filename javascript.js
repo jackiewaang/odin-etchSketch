@@ -1,12 +1,31 @@
-const container = document.querySelector("div");
+const container = document.querySelector(".container");
+const button = document.querySelector("button");
 
-for(let i=0;i<16;i++){
-    const row = document.createElement("div");
-    row.className = "row";
-    container.appendChild(row);
-    for(let j=0;j<16;j++){
-        const square = document.createElement("div");
-        square.className = "cell";
-        row.appendChild(square);
+function createGrid(size){
+    container.innerHTML = "";
+    for(let i=0;i<size;i++){
+        const row = document.createElement("div");
+        row.classList.add("row");
+
+        for(let j=0;j<size;j++){
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+            cell.addEventListener("mouseover", function(){
+                cell.style.backgroundColor = "black";
+            })
+            row.appendChild(cell);
+            console.log("c");
+        }
+        container.appendChild(row);
     }
 }
+
+button.addEventListener("click", function(){
+    const newVal = document.querySelector("input").value;
+    if(newVal > 100 || newVal < 1){
+        return null;
+    }
+    createGrid(newVal);
+})
+
+createGrid(16);

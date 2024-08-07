@@ -1,14 +1,35 @@
 .container{
     display:flex;
     flex-direction:column;
+    height:850px;
+    width:850px;
 }
 
-.container>.row{
+.row{
     display:flex;
+    align-items:stretch;
+    flex:1;
 }
 
-.container>.row>div{
+.cell{
     border:1px solid black;
+    flex:1;
+}
+
+header{
+    margin-bottom:50px;
+    margin-top:50px;
+    font-size:36px;
+}
+
+input{
+    margin-bottom:20px;
+    width:200px;
+    height:20px;
+}
+
+button{
+    margin-bottom:20px;
+    width:100px;
     height:25px;
-    width:25px;
 }
